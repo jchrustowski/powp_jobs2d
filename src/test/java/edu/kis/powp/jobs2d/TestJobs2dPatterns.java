@@ -1,6 +1,6 @@
 package edu.kis.powp.jobs2d;
 
-import java.awt.EventQueue;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +21,7 @@ public class TestJobs2dPatterns {
 
 	/**
 	 * Setup test concerning preset figures in context.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupPresetTests(Application application) {
@@ -34,7 +34,7 @@ public class TestJobs2dPatterns {
 
 	/**
 	 * Setup driver manager, and set default driver for application.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupDrivers(Application application) {
@@ -54,12 +54,15 @@ public class TestJobs2dPatterns {
 		Job2dDriver testSpecialLineDriver = new LineDrawerAdapter(LineFactory.getSpecialLine());
 		DriverFeature.addDriver("SpecialLine driver", testSpecialLineDriver);
 
+		Job2dDriver testCustomDriver = new LineDrawerAdapter(new CustomLine(Color.MAGENTA, 5.0f, true));
+		DriverFeature.addDriver("CustomLine driver", testCustomDriver);
+
 		DriverFeature.updateDriverInfo();
 	}
 
 	/**
 	 * Auxiliary routines to enable using Buggy Simulator.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupDefaultDrawerVisibilityManagement(Application application) {
@@ -71,7 +74,7 @@ public class TestJobs2dPatterns {
 
 	/**
 	 * Setup menu for adjusting logging settings.
-	 * 
+	 *
 	 * @param application Application context.
 	 */
 	private static void setupLogger(Application application) {
