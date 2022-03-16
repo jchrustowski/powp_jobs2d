@@ -5,7 +5,7 @@ import edu.kis.powp.jobs2d.magicpresets.FiguresJoe;
 
 /**
  * Plotter test.
- * 
+ *
  * @author Dominik
  */
 public class Job2dDriverTest {
@@ -29,5 +29,6 @@ public class Job2dDriverTest {
 		public void setPosition(int x, int y) {
 			System.out.println("Driver setPosition action...");
 		}
-	};
+	}
+
 }
